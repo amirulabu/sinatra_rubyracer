@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Welcome to Game</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Winner</th>
+      <th>Time</th>
+    </tr>
+      <% @win.each do |x| %>
+    <tr>
+      <td><%= x.id %></td>
+      <td><%= x.player.name %></td>
+      <td><%= Time.at(x.game.time).sec %> Sec</td>
+    </tr>
+      <%end%>
+
+  </table>
+
+
+
+  <a href="/player/create">START HERE!!!!!!!!!111</a>
+</div>
