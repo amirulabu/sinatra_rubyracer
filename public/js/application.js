@@ -13,8 +13,9 @@ $('#hidden').hide();
       }
       if(p == block){
         atr = $('#player1').attr('name');
+        time = $('#time').attr('name');
         alert(""+ atr + " win")
-
+        debugger
         console.log(atr);
         //$('#win_input').val(atr)
         // $('#target').submit();
@@ -22,7 +23,7 @@ $('#hidden').hide();
           type: "POST",
           url: "/game",
           dataType: "json",
-          data: {"win_input": atr}
+          data: {"win_input": atr, "timestart": time}
         })
         request.done(function(msg){
           window.location.href = '/';
@@ -41,6 +42,7 @@ $('#hidden').hide();
 
         if(q == block){
         atr = $('#player2').attr('name');
+        time = $('#time').attr('name');
         alert(""+ atr + " win")
 
         console.log(atr);
@@ -50,7 +52,7 @@ $('#hidden').hide();
           type: "POST",
           url: "/game",
           dataType: "json",
-          data: {"win_input": atr}
+          data: {"win_input": atr, "timestart": time}
         })
         request.done(function(msg){
           window.location.href = '/';
