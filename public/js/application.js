@@ -15,7 +15,6 @@ $('#hidden').hide();
         atr = $('#player1').attr('name');
         time = $('#time').attr('name');
         alert(""+ atr + " win")
-        debugger
         console.log(atr);
         //$('#win_input').val(atr)
         // $('#target').submit();
@@ -23,7 +22,7 @@ $('#hidden').hide();
           type: "POST",
           url: "/game",
           dataType: "json",
-          data: {"win_input": atr, "timestart": time}
+          data: {"win_input": atr,"timestart":time}
         })
         request.done(function(msg){
           window.location.href = '/';
