@@ -10,7 +10,7 @@
     <tr>
       <td><%= x.id %></td>
       <td><%= x.player.name %></td>
-      <td><%= Time.at(x.game.time).sec %> Sec</td>
+      <td><%= Time.at(x.game.time).to_f.round(4) %> Sec</td>
     </tr>
       <%end%>
 

@@ -41,7 +41,7 @@ end
 
 get '/game' do
   # Look in app/views/index.erb
-  session[:start_time] = (Time.now.to_i).to_s
+  session[:start_time] = (Time.now.to_f).to_s
   erb :game
 end
 
@@ -51,8 +51,8 @@ post '/game' do
   winner = params[:win_input]
 
   pla = Player.where(name: winner).first
-  time_end = Time.now.to_i
-  time_start = params[:timestart].to_i
+  time_end = Time.now.to_f
+  time_start = params[:timestart].to_f
 
   time = time_end - time_start
 
